@@ -30,11 +30,11 @@ jobs:
       run: |
         git fetch
         git checkout gh-pages
-        git pull main --allow-unrelated-histories --merge
+        git pull main --allow-unrelated-histories
         yarn install
         node main.js
         cat index.yaml
         git add index.yaml
         git commit -m "🤖 update index.yaml"
-        git pull --merge
+        git pull
         git push
