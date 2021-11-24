@@ -29,12 +29,10 @@ jobs:
     - name: Create index.yaml on gh-pages
       run: |
         git fetch
-        git checkout gh-pages
-        git rebase main --merge
         yarn install
         node main.js
         cat index.yaml
+        git checkout gh-pages
         git add index.yaml
         git commit -m "🤖 update index.yaml"
-        git pull
         git push
